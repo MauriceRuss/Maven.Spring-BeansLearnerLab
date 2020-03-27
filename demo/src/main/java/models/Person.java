@@ -1,7 +1,7 @@
 package models;
 
 public class Person {
-    
+
     private final Long id;
     private String name;
 
