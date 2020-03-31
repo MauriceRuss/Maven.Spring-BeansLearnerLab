@@ -1,5 +1,6 @@
 package models;
 
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,10 +22,17 @@ class StudentConfigTest {
     Students previousStudents;
 
     @Test
-    void currentStudents() {
+    void currentStudentsTest() {
+        String expectedName = "Chip";
+        String actualName = students.findById(3L).getName();
+        Assert.assertEquals(expectedName, actualName);
+
     }
 
     @Test
     void previousStudents() {
+        String expectedName = "Maggie";
+        String actualName = previousStudents.findById(5L).getName();
+        Assert.assertEquals(expectedName,actualName);
     }
 }
